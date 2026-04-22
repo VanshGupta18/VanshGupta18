@@ -16,7 +16,7 @@
 
 ## About Me
 
-I'm an AI Engineer focused on building reliable, production-grade systems that turn large language models into practical tools. My work spans the full lifecycle — from designing retrieval pipelines and agentic workflows to deploying APIs and building domain-specific NLP applications.
+I'm an AI Engineer focused on building reliable, production-grade systems that turn large language models into practical tools. My work spans the full lifecycle — from designing retrieval pipelines and agentic workflows to deploying full-stack APIs and building domain-specific NLP applications.
 
 Right now I'm deep in **earnings call intelligence** and **corporate compliance automation**, two domains where AI can meaningfully reduce analyst workload and governance risk. I'm also actively exploring geopolitical risk modeling and domain-specific fine-tuning.
 
@@ -26,83 +26,91 @@ Right now I'm deep in **earnings call intelligence** and **corporate compliance 
 
 | Layer | Tools |
 |---|---|
-| **Languages** | Python · TypeScript |
-| **AI / LLM** | LangChain · OpenAI · Hugging Face · Prompt Engineering |
-| **Backend** | FastAPI · REST APIs |
-| **Data & ML** | Jupyter · Pandas · Scikit-learn · PyTorch |
-| **Infrastructure** | Docker · Git · CI/CD |
-| **Domains** | RAG · Agentic AI · NLP · Financial Analytics · Medical ML |
+| **Languages** | Python · TypeScript · Node.js |
+| **AI / LLM** | LangChain · Groq · Hugging Face · Prompt Engineering · PyTorch Geometric |
+| **Backend** | FastAPI · Fastify · REST APIs · SSE |
+| **Data & ML** | Pandas · Scikit-learn · PyTorch · Optuna · NeuroKit2 |
+| **Infrastructure** | Docker · PostgreSQL · pgvector · AWS S3 · Supabase |
+| **Domains** | RAG · Agentic AI · NLP · Financial Analytics · Medical ML · RL Environments |
 
 ---
 
 ## Featured Projects
 
-### 🤖 [Corporate Compliance Environment](https://github.com/VanshGupta18/corporate-compliance-env)
-> **Agentic governance system for corporate compliance workflows**
+### 💬 [GINA — Grounded Insight from Natural Language Analytics](https://github.com/VanshGupta18/Gina_cfp)
+> **Conversational analytics platform that turns plain-English questions into grounded, SQL-backed answers over your own data**
 
-An autonomous AI agent designed to navigate corporate compliance requirements. The system interprets regulatory documents, identifies policy gaps, and flags risks — reducing the manual effort typically required from legal and compliance teams.
+GINA lets users upload a CSV, ask questions in natural language, and receive answers backed by real SQL execution — not model hallucination. It follows **Table-Augmented Generation (TAG)**: the model reasons *with* the table, not instead of it. A live streaming pipeline (planner → SQL → execution → narration) runs transparently over SSE, so users can see exactly how their answer was produced.
 
 **Key highlights:**
-- Multi-step agentic reasoning over compliance documents
-- LLM-powered policy analysis with structured outputs
-- Designed for extensibility across regulatory domains (GDPR, SOC 2, etc.)
+- PII shield runs client-side before any data leaves the browser
+- Tiered SQL generation: deterministic templates → Groq → Hugging Face, with automatic fallback
+- pgvector-backed semantic schema profiling for accurate query routing
+- Full SQL disclosure and expandable verification queries in the UI
+- Deployed and live with Supabase Auth, AWS S3, and PostgreSQL
 
-`Python` `LangChain` `LLM Agents` `FastAPI`
+`Next.js` `Fastify` `PostgreSQL` `pgvector` `Groq` `Hugging Face` `AWS S3` `SSE` `TypeScript`
+
+---
+
+### 🤖 [Corporate Compliance Environment](https://github.com/VanshGupta18/corporate-compliance-env)
+> **The first open-source RL training environment for enterprise expense compliance — built for the Meta PyTorch OpenEnv Hackathon 2026**
+
+An OpenEnv-compliant Reinforcement Learning environment that simulates how a corporate compliance officer audits employee expense claims. The agent receives a ticket, searches a 15-rule policy document, requests missing documents if needed, and resolves each claim with `Approve`, `Reject`, or `Escalate`. Three difficulty tiers — easy, medium, and hard — test progressively more complex multi-turn reasoning.
+
+**Key highlights:**
+- Fully OpenEnv-compliant: `reset`, `step`, `state`, `grader`, and `baseline` endpoints all validated
+- LLM agent (Llama-3.1-8B) achieves 0.90 / 0.80 / 0.70 on easy / medium / hard vs. rule-based baseline of 0.78 / 0.61 / 0.34
+- Policy document is a plain `policy.md` — any company can swap in their own rulebook
+- Grounded in Indian corporate compliance norms: ₹-denominated limits, GST, WFH, and seniority rules
+- Live on Hugging Face Spaces; Dockerized for local deployment
+
+`Python` `FastAPI` `Reinforcement Learning` `LLM Agents` `Docker` `OpenEnv` `Hugging Face`
 
 ---
 
 ### 📈 [Earning Calls Intelligence](https://github.com/VanshGupta18/earning-calls)
-> **NLP pipeline for extracting signals from corporate earnings call transcripts**
+> **Multimodal pipeline that models earnings calls as pressure-driven information environments to extract short-horizon market signals**
 
-Processes earnings call transcripts to extract structured financial signals — sentiment, forward guidance, risk language, and key metric mentions. Built for analysts who want to move faster than manual review allows.
-
-**Key highlights:**
-- Transcript ingestion and preprocessing pipeline
-- Sentiment and tone analysis using NLP models
-- Structured output for downstream financial modeling
-
-`Python` `NLP` `LLM` `Financial Analytics` `Jupyter`
-
----
-
-### 💼 [Gina CFP — AI-Powered CFP Platform](https://github.com/VanshGupta18/Gina_cfp)
-> **Live production app for AI-assisted financial planning** 
-
-A deployed, user-facing platform that brings AI into the Certified Financial Planner workflow. Gina helps advisors and clients navigate financial planning conversations with AI-generated insights and guidance.
+Most earnings call analysis flattens the entire transcript into one sentiment score. This project goes further by treating the call as a **pressure-sensitive interaction system** — modeling the moments where a manager's wording, vocal delivery, and response behavior diverge under analyst questioning. Features like `tone_divergence`, `specificity_under_pressure`, and `response_latency` are designed to capture signals that markets may underreact to.
 
 **Key highlights:**
-- Live production deployment
-- Full-stack TypeScript application with AI integration
-- Built for real users — not just a demo
+- Speaker diarization with pyannote.audio; transcript alignment with WhisperX
+- Structural segmentation into prepared remarks, analyst questions, and management answers — Q&A weighted 3× over scripted remarks during aggregation
+- Text (FinBERT), audio (wav2vec2, openSMILE), and interaction features (text–audio divergence, hesitation under pressure)
+- Leakage-aware evaluation with strict time-based train/test splits
+- Targets: next-day return, 5-day return, realized volatility, earnings surprise, downside risk proxy
 
-`TypeScript` `AI` `Full-Stack` `Production`
+`Python` `PyTorch` `LightGBM` `FinBERT` `wav2vec2` `WhisperX` `pyannote.audio` `DuckDB` `Parquet`
 
 ---
 
 ### 🫀 [ECG Multi-Label Classification](https://github.com/VanshGupta18/ECG-Multi-Label-Classification)
-> **Deep learning model for multi-label ECG arrhythmia detection**
+> **Graph Neural Network framework for detecting multiple concurrent cardiac conditions from 12-lead ECG signals**
 
-A medical ML project tackling the challenge of identifying multiple simultaneous cardiac conditions from ECG signals. Multi-label classification is significantly harder than single-label — a single ECG can carry several overlapping arrhythmia patterns.
+A medical ML project that reframes ECG analysis as a graph problem. Rather than treating each lead independently, it constructs graph representations of 12-lead signals that capture spatial-temporal correlations — then applies GNN message passing to predict multiple simultaneous cardiac pathologies on the PTB-XL dataset.
 
 **Key highlights:**
-- Multi-label output with threshold tuning per class
-- Handles class imbalance common in medical datasets
-- Evaluated on clinically relevant metrics (F1, AUC-ROC per label)
+- ECG signals converted to graph structures preserving inter-lead spatial relationships
+- NeuroKit2 for physiological feature extraction (R-peaks, HRV, waveform morphology)
+- Automated hyperparameter tuning with Optuna across GNN architecture configurations
+- Multi-label output handles overlapping arrhythmia patterns common in real clinical data
+- Evaluated on F1 and AUC-ROC per label — metrics that matter clinically, not just statistically
 
-`Python` `PyTorch` `Scikit-learn` `Medical ML` `Classification`
+`Python` `PyTorch Geometric` `NeuroKit2` `Optuna` `Scikit-learn` `PTB-XL` `Medical ML`
 
 ---
 
 ## Areas of Focus
 
 **🔬 Currently building**
-- Earnings call intelligence pipelines for financial analysts
-- Agentic compliance governance systems with structured reasoning
+- Pressure-aware multimodal earnings call intelligence (text + audio + interaction)
+- OpenEnv-compliant agentic compliance systems with RL and LLM training pipelines (SFT + GRPO)
 
 **🌱 Actively exploring**
 - Geopolitical risk modeling using LLMs and structured data
 - Domain-specific LLM fine-tuning for finance and legal
-- Agentic AI patterns: planning, memory, tool use
+- Agentic AI patterns: planning, memory, multi-turn tool use
 
 ---
 

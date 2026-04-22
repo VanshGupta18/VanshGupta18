@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://github.com/VanshGupta18.png" width="120" style="border-radius:50%"/>
+
 # Vansh Gupta
 
 **AI Engineer · Production-Grade Intelligent Systems**
@@ -10,6 +12,11 @@
 
 *Building intelligent systems that move from notebook to production — RAG pipelines, LLM agents, financial analytics, and NLP applications.*
 
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=VanshGupta18&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VanshGupta18&layout=compact&theme=tokyonight&hide_border=true" height="165"/>
+
 </div>
 
 ---
@@ -19,6 +26,15 @@
 I'm an AI Engineer focused on building reliable, production-grade systems that turn large language models into practical tools. My work spans the full lifecycle — from designing retrieval pipelines and agentic workflows to deploying full-stack APIs and building domain-specific NLP applications.
 
 Right now I'm deep in **earnings call intelligence** and **corporate compliance automation**, two domains where AI can meaningfully reduce analyst workload and governance risk. I'm also actively exploring geopolitical risk modeling and domain-specific fine-tuning.
+
+---
+
+## 🏆 Hackathon Recognition
+
+| Award | Event | Organizer | Year |
+|---|---|---|---|
+| 🥈 **Finalist** | Meta PyTorch OpenEnv Hackathon | Meta · PyTorch | 2026 |
+| 🥇 **Innovation Award** | Agentic AI Hackathon | Ulster University, UK | 2025 |
 
 ---
 
@@ -54,7 +70,7 @@ GINA lets users upload a CSV, ask questions in natural language, and receive ans
 ---
 
 ### 🤖 [Corporate Compliance Environment](https://github.com/VanshGupta18/corporate-compliance-env)
-> **The first open-source RL training environment for enterprise expense compliance — built for the Meta PyTorch OpenEnv Hackathon 2026**
+> **Finalist — Meta PyTorch OpenEnv Hackathon 2026 · The first open-source RL training environment for enterprise expense compliance**
 
 An OpenEnv-compliant Reinforcement Learning environment that simulates how a corporate compliance officer audits employee expense claims. The agent receives a ticket, searches a 15-rule policy document, requests missing documents if needed, and resolves each claim with `Approve`, `Reject`, or `Escalate`. Three difficulty tiers — easy, medium, and hard — test progressively more complex multi-turn reasoning.
 

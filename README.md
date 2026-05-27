@@ -10,16 +10,7 @@
 
 I'm an AI Engineer focused on building reliable, production-grade systems that turn large language models into practical tools. My work spans the full lifecycle — from designing retrieval pipelines and agentic workflows to deploying full-stack APIs and building domain-specific NLP applications.
 
-Right now I'm deep in **earnings call intelligence** and **corporate compliance automation**, two domains where AI can meaningfully reduce analyst workload and governance risk. I'm also actively exploring geopolitical risk modeling and domain-specific fine-tuning.
-
----
-
-## 🏆 Hackathon Recognition
-
-| Award | Event | Organizer | Year |
-|---|---|---|---|
-| 🥈 **Finalist** | Meta PyTorch OpenEnv Hackathon | SST, Bangalore | 2026 |
-| 🥇 **Innovation Award** | Agentic AI Hackathon | Ulster University, UK | 2025 |
+Right now, I'm deep in **earnings call intelligence** and **corporate compliance automation**, two domains where AI can meaningfully reduce analyst workload and governance risk. I'm also actively exploring geopolitical risk modeling and domain-specific fine-tuning.
 
 ---
 
@@ -42,14 +33,18 @@ Right now I'm deep in **earnings call intelligence** and **corporate compliance 
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
-
-
-
-
 **Cloud & DevOps**
 
-
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+---
+
+## 🏆 Hackathon Recognition
+
+| Award | Event | Organizer | Year |
+|---|---|---|---|
+| 🥈 **Finalist** | Meta PyTorch OpenEnv Hackathon | SST, Bangalore | 2026 |
+| 🥇 **Innovation Award** | Agentic AI Hackathon | Ulster University, UK | 2025 |
 
 ---
 
